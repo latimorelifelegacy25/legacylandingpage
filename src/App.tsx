@@ -20,16 +20,18 @@ import {
   Scale
 } from 'lucide-react';
 import { APP_DATA } from './constants';
+import { trackCardEvent } from './services/analytics';
 import LegacyBlueprint from './components/LegacyBlueprint';
 import LivingBenefitsGuide from './components/LivingBenefitsGuide';
 import Assistant from './components/Assistant';
 import { ServiceItem } from './types';
 
-const SocialBtn: React.FC<{ href: string; icon: React.ReactNode }> = ({ href, icon }) => (
+const SocialBtn: React.FC<{ href: string; icon: React.ReactNode; label: string }> = ({ href, icon, label }) => (
   <a 
     href={href} 
     target="_blank" 
-    rel="noopener noreferrer" 
+    rel="noopener noreferrer"
+    onClick={() => trackCardEvent('click', label)}
     className="p-3 bg-slate-50 text-[#1D3A5F] rounded-2xl hover:bg-[#C29D6F] hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
   >
     {icon}
@@ -39,6 +41,7 @@ const SocialBtn: React.FC<{ href: string; icon: React.ReactNode }> = ({ href, ic
 declare global { interface Window { gtag?: (...args: unknown[]) => void; } }
 
 const trackEvent = (action: string, category: string, label: string) => {
+  trackCardEvent('click', label);
   if (typeof window.gtag === 'function') {
     window.gtag('event', action, { event_category: category, event_label: label });
   }
@@ -108,6 +111,9 @@ const App: React.FC = () => {
   const [scrolledPast, setScrolledPast] = useState(false);
 
   useEffect(() => {
+    // Track page visit
+    trackCardEvent('visit');
+
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setScrolledPast(true);
@@ -172,10 +178,10 @@ END:VCARD`;
           <p className="text-slate-400 text-[10px] mt-2 font-bold uppercase tracking-widest">{APP_DATA.license}</p>
           
           <div className="flex justify-center space-x-3 mt-6">
-            <SocialBtn href={APP_DATA.links.linkedin} icon={<Linkedin size={20} />} />
-            <SocialBtn href={APP_DATA.links.facebook} icon={<Facebook size={20} />} />
-            <SocialBtn href={APP_DATA.links.instagram} icon={<Instagram size={20} />} />
-            <SocialBtn href={APP_DATA.links.main} icon={<Globe size={20} />} />
+            <SocialBtn href={APP_DATA.links.linkedin} icon={<Linkedin size={20} />} label="LinkedIn" />
+            <SocialBtn href={APP_DATA.links.facebook} icon={<Facebook size={20} />} label="Facebook" />
+            <SocialBtn href={APP_DATA.links.instagram} icon={<Instagram size={20} />} label="Instagram" />
+            <SocialBtn href={APP_DATA.links.main} icon={<Globe size={20} />} label="Website" />
           </div>
 
           {/* Strategic Contact Bar */}
@@ -219,11 +225,11 @@ END:VCARD`;
 
         {/* Action Utility */}
         <div className="grid grid-cols-2 gap-4 px-8 mb-10">
-          <button onClick={handleCopyLink} className="flex items-center justify-center space-x-2 py-4 border-2 border-slate-100 rounded-2xl text-slate-400 font-bold text-sm hover:border-slate-200 transition-all">
+          <button onClick={() => { handleCopyLink(); trackCardEvent('click', 'Copy Link'); }} className="flex items-center justify-center space-x-2 py-4 border-2 border-slate-100 rounded-2xl text-slate-400 font-bold text-sm hover:border-slate-200 transition-all">
             <Copy size={18} />
             <span>{copied ? 'Copied!' : 'Copy Link'}</span>
           </button>
-          <button onClick={handleSaveContact} className="flex items-center justify-center space-x-2 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl text-[#1D3A5F] font-bold text-sm hover:bg-slate-100 transition-all">
+          <button onClick={() => { handleSaveContact(); trackCardEvent('click', 'Save Contact'); }} className="flex items-center justify-center space-x-2 py-4 bg-slate-50 border-2 border-slate-50 rounded-2xl text-[#1D3A5F] font-bold text-sm hover:bg-slate-100 transition-all">
             <Download size={18} />
             <span>Save Contact</span>
           </button>
