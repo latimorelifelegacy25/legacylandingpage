@@ -22,7 +22,7 @@ export const APP_DATA: AppData = {
   tagline: "Protecting Today. Securing Tomorrow.",
   hashtag: "#TheBeatGoesOn",
   bio: "To empower every family with the financial tools and protection strategies necessary to turn hard work into a lasting legacy, ensuring financial security is a foundation for generations to come.",
-  phone: "(856) 895-1457",
+  phone: "(717) 615-2613",
   email: "jackson1989@latimorelegacy.com",
   bannerUrl: "/logo.jpg",
   links: {
