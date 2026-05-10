@@ -26,7 +26,7 @@ export const APP_DATA: AppData = {
   email: "jackson1989@latimorelegacy.com",
   bannerUrl: "/logo.jpg",
   links: {
-    main: "https://jackson1989-design.github.io/latimore-life-legacy-site/",
+    main: "https://www.latimorelifelegacy.com,
     ethos: "https://agents.ethoslife.com/invite/29ad1",
     booking: "https://latimorelifelegacy.fillout.com/latimorelifelegacy",
     linkedin: "https://www.linkedin.com/in/startwithjacksongfi/",
