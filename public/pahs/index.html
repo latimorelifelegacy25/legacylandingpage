@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Latimore Life & Legacy | Proud Sponsor of Pottsville Area Football '26</title>
+  <meta name="description" content="Latimore Life & Legacy LLC — Proud Sponsor of Pottsville Area High School Football 2026. Protecting Today. Securing Tomorrow. #TheBeatGoesOn" />
+  <meta property="og:url" content="https://card.latimorelifelegacy.com/pahs" />
+  <meta property="og:title" content="Latimore Life & Legacy | Proud Sponsor of PAHS Football '26" />
+  <meta property="og:description" content="Life insurance, retirement, and legacy planning for Schuylkill County families. #TheBeatGoesOn" />
+  <meta property="og:image" content="https://www.genspark.ai/api/files/s/UEVcKy0q" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+    /* ============================================
+       LATIMORE BRAND OS — PAHS SPONSORSHIP PAGE
+       Colors: Navy #2C3E50 | Gold #C49A6C | White
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2C3E50;
+      --navy-dark: #1a2632;
+      --navy-light: #3d5166;
+      --gold: #C49A6C;
+      --gold-light: #d4b48a;
+      --gold-dark: #a67d52;
+      --white: #ffffff;
+      --off-white: #f8f6f2;
+      --crimson: #8B1A2F;
+      --crimson-light: #a82040;
+      --text-dark: #1a1a1a;
+      --text-mid: #444;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy-dark);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ==================== STADIUM HERO ==================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    /* Animated stadium light background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(44,62,80,0.95) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 80% 10%, rgba(44,62,80,0.95) 0%, transparent 60%),
+        linear-gradient(180deg, #0d1b2a 0%, #1a2f45 30%, #1e4d2b 70%, #0f3318 100%);
+      z-index: 0;
+    }
+
+    /* Stadium lights */
+    .stadium-lights {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .light-beam {
+      position: absolute;
+      top: -5%;
+      width: 3px;
+      height: 55%;
+      background: linear-gradient(180deg, rgba(255,255,220,0.5) 0%, transparent 100%);
+      transform-origin: top center;
+      animation: sway 8s ease-in-out infinite;
+    }
+    .light-beam:nth-child(1) { left: 8%; transform: rotate(-18deg); animation-delay: 0s; }
+    .light-beam:nth-child(2) { left: 14%; transform: rotate(-10deg); animation-delay: 1s; }
+    .light-beam:nth-child(3) { left: 20%; transform: rotate(-5deg); animation-delay: 0.5s; }
+    .light-beam:nth-child(4) { right: 8%; transform: rotate(18deg); animation-delay: 0.3s; }
+    .light-beam:nth-child(5) { right: 14%; transform: rotate(10deg); animation-delay: 1.3s; }
+    .light-beam:nth-child(6) { right: 20%; transform: rotate(5deg); animation-delay: 0.8s; }
+
+    @keyframes sway {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Football field bottom */
+    .field-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background: linear-gradient(180deg, transparent 0%, #1e4d2b 30%, #155221 70%, #0f3318 100%);
+      z-index: 2;
+    }
+    .field-lines {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+    }
+    .field-line {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      background: rgba(255,255,255,0.15);
+      height: 2px;
+    }
+    .field-line:nth-child(1) { bottom: 25%; }
+    .field-line:nth-child(2) { bottom: 50%; }
+    .field-line:nth-child(3) { bottom: 75%; }
+    /* Yard numbers */
+    .yard-number {
+      position: absolute;
+      bottom: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 2px;
+    }
+    .yard-number.left { left: 10%; }
+    .yard-number.right { right: 10%; }
+    .yard-number.center { left: 50%; transform: translateX(-50%); }
+
+    /* ==================== HERO CONTENT ==================== */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 480px;
+      padding: 20px 20px 180px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .sponsor-badge {
+      background: rgba(196,154,108,0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      animation: fadeInDown 0.6s ease both;
+    }
+
+    .hero-school-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.8rem, 11vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold);
+      text-shadow: 0 2px 20px rgba(196,154,108,0.4), 0 0 60px rgba(196,154,108,0.2);
+      letter-spacing: 1px;
+      animation: fadeInDown 0.7s ease 0.1s both;
+      margin-bottom: 4px;
+    }
+
+    .hero-year {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.8rem, 7vw, 3rem);
+      font-weight: 600;
+      color: var(--white);
+      opacity: 0.9;
+      animation: fadeInDown 0.7s ease 0.2s both;
+      margin-bottom: 20px;
+    }
+
+    /* Football emoji animated */
+    .football-icon {
+      font-size: 3rem;
+      animation: bounce 2s ease-in-out infinite, fadeInDown 0.8s ease 0.3s both;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(-15deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    /* Logos row */
+    .logos-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 28px;
+      animation: fadeIn 0.9s ease 0.4s both;
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tide-logo-container {
+      width: 110px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tide-logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    }
+
+    .logo-divider {
+      width: 2px;
+      height: 70px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      opacity: 0.5;
+    }
+
+    .latimore-logo-container {
+      width: 160px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Real logo image — no SVG needed */
+    .latimore-logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* #TheBeatGoesOn banner */
+    .beat-img-wrap {
+      width: 100%;
+      max-width: 340px;
+      margin-bottom: 24px;
+      animation: fadeIn 1s ease 0.5s both;
+    }
+    .beat-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* white bg image — blend into dark hero */
+      mix-blend-mode: screen;
+      filter: brightness(1.05);
+    }
+
+    /* QR + URL section */
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      animation: fadeIn 1s ease 0.6s both;
+    }
+
+    .qr-frame {
+      background: var(--white);
+      border: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 40px rgba(196,154,108,0.2);
+    }
+
+    .qr-frame canvas, .qr-frame img {
+      display: block;
+      width: 130px;
+      height: 130px;
+    }
+
+    .qr-url {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* ==================== CTA STRIP ==================== */
+    .cta-strip {
+      position: relative;
+      z-index: 10;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      border-top: 3px solid var(--gold);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .cta-strip p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--navy-dark);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(196,154,108,0.35);
+    }
+    .btn-primary:hover, .btn-primary:active {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(196,154,108,0.5);
+    }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover, .btn-secondary:active {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ==================== ORIGIN STORY ==================== */
+    .story-section {
+      background: var(--off-white);
+      color: var(--text-dark);
+      padding: 48px 24px;
+    }
+
+    .story-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold-dark);
+    }
+
+    .story-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .story-section h2 em {
+      color: var(--crimson);
+      font-style: normal;
+    }
+
+    .heartbeat-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .heartbeat-line {
+      flex: 1;
+      height: 32px;
+    }
+
+    .story-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+    }
+
+    .story-text strong {
+      color: var(--navy);
+    }
+
+    .date-callout {
+      background: var(--navy);
+      color: var(--white);
+      border-left: 4px solid var(--gold);
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 24px 0;
+    }
+    .date-callout .date {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .date-callout p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .hashtag {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold-dark);
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    /* ==================== SERVICES ==================== */
+    .services-section {
+      background: var(--navy-dark);
+      padding: 48px 24px;
+    }
+
+    .services-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .services-section .section-label { color: var(--gold); }
+    .services-section .section-label::before { background: var(--gold); }
+
+    .services-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.5rem, 6vw, 2.1rem);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .services-subtitle {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,154,108,0.2);
+      border-radius: 10px;
+      padding: 18px 14px;
+      text-align: center;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      background: rgba(196,154,108,0.1);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 1.1rem;
+      color: var(--navy-dark);
+    }
+
+    .service-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: 0.3px;
+    }
+
+    /* Carriers */
+    .carriers-bar {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,154,108,0.15);
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+    .carriers-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .carriers-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .carrier-tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ==================== TERRITORY ==================== */
+    .territory-section {
+      background: var(--crimson);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .territory-inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .territory-section h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+    }
+    .territory-section p {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.3rem, 5vw, 1.7rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+    .territory-section .county-detail {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 8px;
+      font-weight: 400;
+    }
+    .tide-pride {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 2px;
+    }
+
+    /* ==================== CONTACT ==================== */
+    .contact-section {
+      background: var(--navy);
+      padding: 48px 24px 32px;
+    }
+    .contact-inner {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-section .section-label { color: var(--gold); justify-content: center; }
+    .contact-section .section-label::before { background: var(--gold); }
+
+    .contact-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.5rem, 6vw, 2.1rem);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .contact-section > .contact-inner > p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,154,108,0.2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--white);
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .contact-card:hover, .contact-card:active {
+      background: rgba(196,154,108,0.1);
+      border-color: var(--gold);
+      transform: translateX(4px);
+    }
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--navy-dark);
+      flex-shrink: 0;
+    }
+    .contact-card-text {
+      flex: 1;
+    }
+    .contact-card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .contact-card-value {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .contact-card-arrow {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.9rem;
+    }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(196,154,108,0.2);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .footer-hashtag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .footer-disclaimer {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.5;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==================== STICKY CTA BAR ==================== */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      border-top: 2px solid var(--gold);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+    }
+    .sticky-cta.show { transform: translateY(0); }
+    .sticky-cta-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      color: var(--white);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      flex: 1;
+    }
+    .sticky-cta-text span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .sticky-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--navy-dark);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ==================== PULSE BADGE ==================== */
+    .pulse-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(139,26,47,0.2);
+      border: 1px solid rgba(139,26,47,0.5);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ff6b7a;
+      margin-bottom: 16px;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #ff4d5e;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(139,26,47,0.3); }
+      50% { box-shadow: 0 0 0 6px rgba(139,26,47,0); }
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.7; }
+    }
+
+    /* Mobile safe area padding */
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      .sticky-cta {
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="stadium-lights">
+      <div class="light-beam"></div>
+      <div class="light-beam"></div>
+      <div class="light-beam"></div>
+      <div class="light-beam"></div>
+      <div class="light-beam"></div>
+      <div class="light-beam"></div>
+    </div>
+    <div class="field-bottom">
+      <div class="field-lines">
+        <div class="field-line"></div>
+        <div class="field-line"></div>
+        <div class="field-line"></div>
+        <span class="yard-number left">2</span>
+        <span class="yard-number center">5 0</span>
+        <span class="yard-number right">6</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="sponsor-badge">Proud Sponsor Of</div>
+      <div class="hero-school-name">POTTSVILLE AREA<br>HIGH SCHOOL</div>
+      <div class="hero-year">FOOTBALL '26</div>
+
+      <div class="pulse-badge">
+        <div class="pulse-dot"></div>
+        CRIMSON TIDE — GAME DAY
+      </div>
+
+      <div class="football-icon">🏈</div>
+
+      <!-- Logos Side by Side -->
+      <div class="logos-row">
+        <div class="logo-wrap">
+          <div class="tide-logo-container">
+            <img src="../assets/img/tide-logo.png" alt="Pottsville Crimson Tide Logo" />
+          </div>
+        </div>
+        <div class="logo-divider"></div>
+        <div class="logo-wrap">
+          <div class="latimore-logo-container">
+            <img src="../assets/img/latimore-logo.png" alt="Latimore Life &amp; Legacy LLC" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(196,154,108,0.4));" />
+          </div>
+        </div>
+      </div>
+
+      <!-- #TheBeatGoesOn real brand image -->
+      <div class="beat-img-wrap">
+        <img src="../assets/img/beatgoeson-banner.png" alt="#TheBeatGoesOn" class="beat-img" />
+      </div>
+
+      <!-- QR Code -->
+      <div class="qr-section">
+        <div class="qr-frame">
+          <canvas id="qrCanvas" width="130" height="130"></canvas>
+        </div>
+        <span class="qr-url">card.latimorelifelegacy.com/pahs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA STRIP ==================== -->
+  <section class="cta-strip reveal">
+    <h2>GET YOUR FREE PROTECTION REVIEW</h2>
+    <p>No pressure. Just clarity. One conversation can change your family's future.</p>
+    <div class="cta-buttons">
+      <a href="https://latimorelifelegacy.fillout.com/latimorelifelegacy" class="btn-primary" target="_blank" rel="noopener">
+        <i class="fas fa-clipboard-list"></i>
+        Start My Free Review
+      </a>
+      <a href="tel:+18568951457" class="btn-secondary" style="text-decoration:none;">
+        <i class="fas fa-phone"></i>
+        Call Jackson Direct
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== ORIGIN STORY ==================== -->
+  <section class="story-section">
+    <div class="story-inner reveal">
+      <div class="section-label">Our Story</div>
+      <h2>A Saved Life Became<br>A <em>Mission</em></h2>
+
+      <div class="date-callout">
+        <div class="date">December 7, 2010</div>
+        <p>Jackson M. Latimore Sr. collapsed from sudden cardiac arrest at ESU's Koehler Fieldhouse — and was saved by an AED placed by the Gregory W. Moyer Defibrillator Fund, honoring a 15-year-old boy who died from the same cause.</p>
+      </div>
+
+      <p class="story-text">That moment — watching a prepared community save a life — is the heartbeat behind everything we do at <strong>Latimore Life & Legacy LLC.</strong></p>
+      <p class="story-text">We don't sell fear. We help <strong>families in Schuylkill, Luzerne, and Northumberland counties</strong> prepare for life's uncertainties with clarity and confidence — because legacy isn't just what you leave behind. It's how you show up today.</p>
+      <p class="story-text">Supporting PAHS football is just one way we put our mission into action — <strong>right here, in our community.</strong></p>
+      <span class="hashtag">#TheBeatGoesOn &nbsp;🏈&nbsp; #LatimoreLifeAndLegacy</span>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services-section">
+    <div class="services-inner reveal">
+      <div class="section-label">What We Do</div>
+      <h2>Your Complete<br>Financial Protection Team</h2>
+      <p class="services-subtitle">From your first policy to your retirement paycheck — we've got Central Pennsylvania covered.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-heart"></i></div>
+          <h3>Life Insurance & Living Benefits</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3>Retirement Income & Annuities</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Indexed Growth & IRA Strategies</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-scroll"></i></div>
+          <h3>Estate & Legacy Planning</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <h3>Business Owner & Key Person</h3>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-house"></i></div>
+          <h3>Mortgage Protection Term</h3>
+        </div>
+      </div>
+
+      <div class="carriers-bar">
+        <div class="carriers-label">Carrier Appointments</div>
+        <div class="carriers-list">
+          <span class="carrier-tag">North American</span>
+          <span class="carrier-tag">F&G</span>
+          <span class="carrier-tag">American Equity</span>
+          <span class="carrier-tag">Ethos</span>
+          <span class="carrier-tag">American General</span>
+          <span class="carrier-tag">Foresters</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TERRITORY BADGE ==================== -->
+  <section class="territory-section">
+    <div class="territory-inner reveal">
+      <h3>Serving</h3>
+      <p>Schuylkill · Luzerne · Northumberland</p>
+      <p class="county-detail">560,000+ residents across Central Pennsylvania</p>
+      <div class="tide-pride">
+        <img src="../assets/img/tide-logo.png" alt="Tide" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1);" />
+        GO CRIMSON TIDE
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact-section">
+    <div class="contact-inner reveal">
+      <div class="section-label">Let's Connect</div>
+      <h2>Start the Conversation</h2>
+      <p>A 15-minute call is all it takes to know exactly where you stand.</p>
+
+      <div class="contact-cards">
+        <!-- Fillout Form CTA -->
+        <a href="https://latimorelifelegacy.fillout.com/latimorelifelegacy" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon"><i class="fas fa-clipboard-list"></i></div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Free Protection Review</div>
+            <div class="contact-card-value">Get Started — Takes 2 Min</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+18568951457" class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Call Jackson Direct</div>
+            <div class="contact-card-value">(856) 895-1457</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:jackson1989@latimorelegacy.com" class="contact-card">
+          <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Email Jackson</div>
+            <div class="contact-card-value">jackson1989@latimorelegacy.com</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+
+        <!-- Get a Term Quote via Ethos -->
+        <a href="https://agents.ethoslife.com/invite/29ad1" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon" style="background: linear-gradient(135deg, #2ecc71, #1a9e52);">
+            <i class="fas fa-file-contract" style="color:#fff;"></i>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Get a Term Life Quote</div>
+            <div class="contact-card-value">Apply Online via Ethos</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/jacksonlatimore.global?igsh=MTI5N25yNzR4emlieQ==" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon" style="background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
+            <i class="fab fa-instagram" style="color:#fff;"></i>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Follow on Instagram</div>
+            <div class="contact-card-value">@jacksonlatimore.global</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/LatimoreLegacyLLC/" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon" style="background: linear-gradient(135deg, #1877F2, #0d5dbf);">
+            <i class="fab fa-facebook-f" style="color:#fff;"></i>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Follow on Facebook</div>
+            <div class="contact-card-value">@LatimoreLegacyLLC</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/startwithjacksongfi?trk=contact-info" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon" style="background: linear-gradient(135deg, #0077B5, #005885);">
+            <i class="fab fa-linkedin-in" style="color:#fff;"></i>
+          </div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Connect on LinkedIn</div>
+            <div class="contact-card-value">Jackson M. Latimore Sr.</div>
+          </div>
+          <span class="contact-card-arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+      </div>
+
+      <!-- Final CTA -->
+      <a href="https://latimorelifelegacy.fillout.com/latimorelifelegacy" class="btn-primary" target="_blank" rel="noopener" style="width:100%;max-width:360px;text-decoration:none;">
+        <i class="fas fa-shield-heart"></i>
+        Get My Free Protection Review
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <a href="https://www.latimorelifelegacy.com" target="_blank" rel="noopener" style="text-decoration:none;">
+      <div class="footer-logo">LATIMORE LIFE & LEGACY LLC</div>
+    </a>
+    <div class="footer-tagline">Protecting Today. Securing Tomorrow.</div>
+    <div class="footer-hashtag">#TheBeatGoesOn · #LifeHappensLegacyIsPlanned</div>
+    <!-- Footer social icons -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:20px;">
+      <a href="tel:+18568951457" style="color:rgba(255,255,255,0.45);font-size:1.05rem;" title="Call Jackson"><i class="fas fa-phone"></i></a>
+      <a href="mailto:jackson1989@latimorelegacy.com" style="color:rgba(255,255,255,0.45);font-size:1.05rem;" title="Email Jackson"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.facebook.com/LatimoreLegacyLLC/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);font-size:1.05rem;" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/jacksonlatimore.global?igsh=MTI5N25yNzR4emlieQ==" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);font-size:1.05rem;" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/startwithjacksongfi?trk=contact-info" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);font-size:1.05rem;" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://agents.ethoslife.com/invite/29ad1" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);font-size:1.05rem;" title="Get a Quote via Ethos"><i class="fas fa-file-contract"></i></a>
+    </div>
+    <div class="footer-disclaimer">
+      Jackson M. Latimore Sr. · Latimore Life & Legacy LLC · Independent Insurance Consultant<br>
+      Licensed in Pennsylvania · NIPR #21638507 · PA D.O.I. License #1268820<br>
+      Schuylkill · Luzerne · Northumberland Counties · <a href="https://www.latimorelifelegacy.com" style="color:rgba(255,255,255,0.35);" target="_blank">www.latimorelifelegacy.com</a><br><br>
+      Life insurance and annuity products are subject to underwriting approval. Rates and availability vary by individual factors. This page is intended for informational purposes and does not constitute financial, legal, or tax advice. Proud sponsor of Pottsville Area High School Football 2026.
+    </div>
+  </footer>
+
+  <!-- ==================== STICKY CTA ==================== -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-text"><span>Free</span> Protection Review</div>
+    <a href="https://latimorelifelegacy.fillout.com/latimorelifelegacy" class="sticky-btn" target="_blank" rel="noopener">Start Now</a>
+  </div>
+
+  <!-- ==================== JS ==================== -->
+  <script>
+    // ---- QR Code Generator (pure JS, no CDN needed) ----
+    // Minimal QR code for card.latimorelifelegacy.com/pahs
+    // Using a simple canvas draw since we want the URL encoded
+    (function() {
+      // We'll use a QR code via a free API rendered into an img
+      const canvas = document.getElementById('qrCanvas');
+      const ctx = canvas.getContext('2d');
+      // Draw placeholder gold dots pattern while QR loads
+      ctx.fillStyle = '#C49A6C';
+      ctx.fillRect(0, 0, 130, 130);
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(5, 5, 120, 120);
+
+      // Load QR from qrserver.com
+      const qrImg = new Image();
+      qrImg.crossOrigin = 'anonymous';
+      qrImg.onload = function() {
+        ctx.clearRect(0, 0, 130, 130);
+        ctx.drawImage(qrImg, 0, 0, 130, 130);
+      };
+      qrImg.onerror = function() {
+        // Fallback: draw a placeholder
+        ctx.fillStyle = '#1a2632';
+        ctx.fillRect(0, 0, 130, 130);
+        ctx.fillStyle = '#C49A6C';
+        ctx.font = 'bold 10px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText('Scan to visit', 65, 60);
+        ctx.fillText('latimorelifelegacy', 65, 75);
+        ctx.fillText('.com/pahs', 65, 90);
+      };
+      qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=130x130&color=2C3E50&bgcolor=FFFFFF&data=https://card.latimorelifelegacy.com/pahs&margin=4';
+    })();
+
+    // ---- Scroll reveal ----
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ---- Sticky CTA show after scroll ----
+    const stickyCta = document.getElementById('stickyCta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.6) {
+        stickyCta.classList.add('show');
+      } else {
+        stickyCta.classList.remove('show');
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
