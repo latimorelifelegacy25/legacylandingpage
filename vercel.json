@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/pahs",
+      "destination": "https://www.latimorelifelegacy.com/pahs",
+      "permanent": true
+    },
+    {
+      "source": "/pahs/",
+      "destination": "https://www.latimorelifelegacy.com/pahs",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
