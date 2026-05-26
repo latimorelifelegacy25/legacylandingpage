@@ -169,6 +169,13 @@ END:VCARD`;
 
         {/* Profile Info & Credentials */}
         <div className="text-center px-8 pt-10 pb-4 bg-white">
+          <div className="mx-auto mb-5 h-20 w-20 rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
+            <img
+              src={APP_DATA.bannerUrl}
+              alt={`${APP_DATA.company} logo`}
+              className="h-full w-full object-contain"
+            />
+          </div>
           <h1 className="text-3xl font-black text-[#1D3A5F] tracking-tight leading-tight">{APP_DATA.name}</h1>
           <p className="text-slate-500 font-semibold text-lg mt-1">{APP_DATA.title}</p>
           <div className="flex items-center justify-center space-x-2 mt-2">
