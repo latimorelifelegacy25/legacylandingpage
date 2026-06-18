@@ -7,220 +7,57 @@
   <meta name="description" content="Latimore Life & Legacy LLC — Proud sponsor of Pottsville Area Crimson Tide. Free PAHS Protect Review." />
   <meta property="og:title" content="PAHS Protect Review | Latimore Life & Legacy LLC" />
   <meta property="og:description" content="Proud PAHS sponsor. Scan, request, and get local follow-up." />
-
+  <meta property="og:image" content="/pahs/assets/pahs-friday-night-lights.jpg" />
   <style>
-    :root {
-      --navy: #0B1722;
-      --navy-2: #102335;
-      --gold: #C49A6C;
-      --gold-2: #D5B37F;
-      --crimson: #8B1A2F;
-      --white: #FFFFFF;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--navy);
-    }
-
+    :root { --navy:#0B1722; --gold:#C49A6C; --gold2:#D5B37F; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:var(--navy); }
     body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--white);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(196,154,108,.17), transparent 28rem),
-        radial-gradient(circle at top right, rgba(139,26,47,.2), transparent 26rem),
-        linear-gradient(180deg, #08131e 0%, #0d1b2a 45%, #07111b 100%);
-      padding-bottom: calc(112px + env(safe-area-inset-bottom));
-      overflow-x: hidden;
+      margin:0;
+      min-height:100vh;
+      color:var(--white);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:radial-gradient(circle at top left,rgba(196,154,108,.17),transparent 28rem),
+                 radial-gradient(circle at top right,rgba(139,26,47,.2),transparent 26rem),
+                 linear-gradient(180deg,#08131e 0%,#0d1b2a 45%,#07111b 100%);
+      padding-bottom:calc(112px + env(safe-area-inset-bottom));
+      overflow-x:hidden;
     }
-
-    .hero {
-      width: min(100%, 1120px);
-      margin: 0 auto;
-      padding: 42px 18px 22px;
-      text-align: center;
-    }
-
-    .kicker {
-      margin: 0 0 16px;
-      color: var(--gold);
-      font-size: clamp(.74rem, 2.5vw, .95rem);
-      font-weight: 900;
-      letter-spacing: .34em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 13vw, 7.5rem);
-      line-height: .9;
-      text-transform: uppercase;
-      letter-spacing: .03em;
-      font-weight: 1000;
-    }
-
-    h1 span { color: var(--gold); }
-
-    .sub {
-      width: min(100%, 740px);
-      margin: 20px auto 0;
-      color: rgba(255,255,255,.78);
-      font-size: clamp(1rem, 3.4vw, 1.25rem);
-      line-height: 1.55;
-      font-weight: 650;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: .82rem;
-      font-weight: 1000;
-      letter-spacing: .12em;
-      border: 1px solid rgba(196,154,108,.52);
-    }
-
-    .button.primary {
-      background: linear-gradient(135deg, var(--gold-2) 0%, var(--gold) 48%, #A87B45 100%);
-      color: var(--navy);
-      box-shadow: 0 12px 34px rgba(196,154,108,.26);
-    }
-
-    .button.secondary {
-      color: var(--white);
-      background: rgba(255,255,255,.055);
-    }
-
-    .assets {
-      width: min(100%, 1180px);
-      margin: 0 auto;
-      padding: 16px 14px 42px;
-      display: grid;
-      gap: 28px;
-    }
-
-    .image-card {
-      display: block;
-      width: 100%;
-      margin-inline: auto;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(196,154,108,.38);
-      background: rgba(255,255,255,.035);
-      box-shadow: 0 24px 60px rgba(0,0,0,.42);
-      text-decoration: none;
-    }
-
-    .image-card.square { max-width: 920px; }
-    .image-card.wide { max-width: 1120px; }
-
-    .image-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .caption {
-      padding: 12px 16px 14px;
-      color: rgba(255,255,255,.80);
-      background: rgba(0,0,0,.28);
-      font-size: .86rem;
-      line-height: 1.45;
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .proof {
-      width: min(100%, 920px);
-      margin: 0 auto;
-      padding: 20px 18px 72px;
-      text-align: center;
-      color: rgba(255,255,255,.80);
-      line-height: 1.65;
-    }
-
-    .proof strong { color: var(--gold); }
-
-    .sticky {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 18px calc(14px + env(safe-area-inset-bottom));
-      background: linear-gradient(135deg, rgba(8,19,30,.98), rgba(44,62,80,.98));
-      border-top: 2px solid var(--gold);
-      box-shadow: 0 -16px 44px rgba(0,0,0,.46);
-    }
-
-    .sticky-text {
-      min-width: 0;
-      white-space: nowrap;
-      font-size: clamp(.82rem, 3vw, 1rem);
-      font-weight: 1000;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .sticky-button {
-      flex: 0 0 auto;
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 22px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--gold-2), var(--gold));
-      color: var(--navy);
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: .82rem;
-      font-weight: 1000;
-      letter-spacing: .12em;
-    }
-
-    @media (max-width: 620px) {
-      .hero { padding-top: 34px; }
-      .assets { gap: 22px; padding-inline: 10px; }
-      .image-card { border-radius: 16px; }
-      .caption { font-size: .78rem; }
-      .sticky { padding-inline: 14px; }
-      .sticky-button { min-height: 46px; padding-inline: 18px; }
+    .hero { width:min(100%,1120px); margin:0 auto; padding:42px 18px 22px; text-align:center; }
+    .kicker { margin:0 0 16px; color:var(--gold); font-size:clamp(.74rem,2.5vw,.95rem); font-weight:900; letter-spacing:.34em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(3rem,13vw,7.5rem); line-height:.9; text-transform:uppercase; letter-spacing:.03em; font-weight:1000; }
+    h1 span { color:var(--gold); }
+    .sub { width:min(100%,740px); margin:20px auto 0; color:rgba(255,255,255,.78); font-size:clamp(1rem,3.4vw,1.25rem); line-height:1.55; font-weight:650; }
+    .actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:26px; }
+    .button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:13px 22px; border-radius:999px; text-decoration:none; text-transform:uppercase; font-size:.82rem; font-weight:1000; letter-spacing:.12em; border:1px solid rgba(196,154,108,.52); }
+    .button.primary { background:linear-gradient(135deg,var(--gold2),var(--gold)); color:var(--navy); box-shadow:0 12px 34px rgba(196,154,108,.26); }
+    .button.secondary { color:var(--white); background:rgba(255,255,255,.055); }
+    .assets { width:min(100%,1180px); margin:0 auto; padding:16px 14px 42px; display:grid; gap:28px; }
+    .image-card { display:block; width:100%; margin-inline:auto; overflow:hidden; border-radius:24px; border:1px solid rgba(196,154,108,.38); background:rgba(255,255,255,.035); box-shadow:0 24px 60px rgba(0,0,0,.42); text-decoration:none; }
+    .image-card.square { max-width:920px; }
+    .image-card.wide { max-width:1120px; }
+    .image-card img { display:block; width:100%; height:auto; object-fit:contain; }
+    .caption { padding:12px 16px 14px; color:rgba(255,255,255,.80); background:rgba(0,0,0,.28); font-size:.86rem; line-height:1.45; text-align:center; font-weight:700; }
+    .proof { width:min(100%,920px); margin:0 auto; padding:20px 18px 72px; text-align:center; color:rgba(255,255,255,.80); line-height:1.65; }
+    .proof strong { color:var(--gold); }
+    .sticky { position:fixed; left:0; right:0; bottom:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 18px calc(14px + env(safe-area-inset-bottom)); background:linear-gradient(135deg,rgba(8,19,30,.98),rgba(44,62,80,.98)); border-top:2px solid var(--gold); box-shadow:0 -16px 44px rgba(0,0,0,.46); }
+    .sticky-text { min-width:0; white-space:nowrap; font-size:clamp(.82rem,3vw,1rem); font-weight:1000; letter-spacing:.1em; text-transform:uppercase; }
+    .sticky-button { flex:0 0 auto; display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:0 22px; border-radius:14px; background:linear-gradient(135deg,var(--gold2),var(--gold)); color:var(--navy); text-decoration:none; text-transform:uppercase; font-size:.82rem; font-weight:1000; letter-spacing:.12em; }
+    @media (max-width:620px) {
+      .hero { padding-top:34px; }
+      .assets { gap:22px; padding-inline:10px; }
+      .image-card { border-radius:16px; }
+      .caption { font-size:.78rem; }
+      .sticky { padding-inline:14px; }
+      .sticky-button { min-height:46px; padding-inline:18px; }
     }
   </style>
 </head>
-
 <body>
   <section class="hero">
     <p class="kicker">PAHS Protect Funnel</p>
     <h1>Friday Night <span>Lights</span></h1>
-    <p class="sub">
-      Real campaign assets. No rebuilt coupon. No cropped graphics. No empty video box.
-      Scan, request, and get local follow-up from Latimore Life &amp; Legacy LLC.
-    </p>
-
+    <p class="sub">Real campaign assets. No rebuilt coupon. No cropped graphics. No empty video box. Scan, request, and get local follow-up from Latimore Life &amp; Legacy LLC.</p>
     <div class="actions">
       <a class="button primary" href="./form/">Start Protection Review</a>
       <a class="button secondary" href="#campaign-assets">View Campaign Images</a>
@@ -230,25 +67,20 @@
   <section id="campaign-assets" class="assets" aria-label="PAHS campaign images">
     <a class="image-card square" href="./form/" aria-label="Start PAHS Protection Review">
       <img src="./assets/pahs-friday-night-lights.jpg" alt="Friday Night Lights Pottsville Area Crimson Tide Latimore sponsor poster" loading="eager" />
-      <div class="caption">Friday Night Lights sponsor poster — rendered as the actual finished image.</div>
+      <div class="caption">Friday Night Lights sponsor poster.</div>
     </a>
-
-    <a class="image-card wide" href="./form/" aria-label="Start PAHS Protection Review">
-      <img src="./assets/pahs-free-consultation-coupon.jpg" alt="Free consultation sponsor coupon with Latimore Life and Legacy QR code" loading="lazy" />
-      <div class="caption">Free Consultation QR coupon — no mobile side-rail rebuild, no text crushing.</div>
-    </a>
-
     <a class="image-card square" href="./form/" aria-label="Start PAHS Protection Review">
       <img src="./assets/pahs-throwback-tide-thursday.jpg" alt="Throwback Tide Thursday 2005 Coal Region All-Area Football where the journey began" loading="lazy" />
-      <div class="caption">Throwback Tide Thursday — preserved uncropped.</div>
+      <div class="caption">Throwback Tide Thursday.</div>
+    </a>
+    <a class="image-card wide" href="./form/" aria-label="Start PAHS Protection Review">
+      <img src="./assets/pahs-free-consultation-coupon.jpg" alt="Free consultation sponsor coupon with Latimore Life and Legacy QR code" loading="lazy" />
+      <div class="caption">Free Consultation QR coupon.</div>
     </a>
   </section>
 
   <section class="proof">
-    <p>
-      <strong>Latimore Life &amp; Legacy LLC</strong> is proud to support Pottsville Area Crimson Tide football
-      while helping local families review income protection, life insurance, living benefits, and legacy gaps.
-    </p>
+    <p><strong>Latimore Life &amp; Legacy LLC</strong> is proud to support Pottsville Area Crimson Tide football while helping local families review income protection, life insurance, living benefits, and legacy gaps.</p>
   </section>
 
   <div class="sticky">
